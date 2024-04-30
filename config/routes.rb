@@ -17,6 +17,11 @@ Rails.application.routes.draw do
   # Post a new task
   post "/tasks", to: "tasks#create"
 
+  # Edit specific task
+  get "/tasks/:id/edit", to: "tasks#edit", as: :edit
+  # Update specific task
+  patch "/tasks/:id", to: "tasks#update"
+
   # Display specific task
   get "/tasks/:id", to: "tasks#show", as: :task
 
